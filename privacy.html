@@ -17,7 +17,7 @@ a{color:#2F7470}ul{padding-left:1.2em}
 <p><strong>App:</strong> Jothidam Today: Tamil Jathagam (package com.digiproductfactory.jothidamtoday)<br>
 <strong>Publisher:</strong> Digi Product Factory<br>
 <strong>Contact:</strong> <a href="mailto:jothidamtoday.help@gmail.com">jothidamtoday.help@gmail.com</a><br>
-<strong>Last updated:</strong> 18 November 2026</p>
+<strong>Last updated:</strong> 19 November 2026</p>
 
 <p class="note">In short: your birth details and family profiles stay on your phone. When you ask the AI astrologer a question, the question and some calculated chart values are sent to our server and to Google's Gemini service to write the answer. There is no sign-up, email or phone number.</p>
 
@@ -25,26 +25,27 @@ a{color:#2F7470}ul{padding-left:1.2em}
 <p>Jothidam Today shows the daily Tamil Panchangam, a calendar, Rasi Palan, Thirumana Porutham, a Jathagam chart, and an AI astrologer that explains calculated chart facts in simple language. The AI answers are for guidance and entertainment only.</p>
 
 <h2>2. Information we handle</h2>
-<p><strong>Stays on your phone.</strong> Names, birth dates, birth times, birth places, family profiles, the city you choose, language and theme settings. We do not send these to our servers. The app calculates the Panchangam, charts and matches on the phone itself.</p>
+<p><strong>Stays on your phone.</strong> Names, birth dates, birth times, birth places, family profiles, the city you choose and your theme setting. We do not send these to our servers. The app calculates the Panchangam, charts and matches on the phone itself. (Your language setting is sent with each AI question, as described below.)</p>
 <p><strong>Sent when you ask the AI a question.</strong></p>
 <ul>
 <li>Your question text (up to 500 characters) and up to a few earlier messages of the same chat.</li>
-<li>Calculated chart facts, such as the day's Panchangam values, rasi, nakshatram, dasha period and match results. These do not include your name, birth date, birth time or city.</li>
+<li>Calculated chart facts for the selected profile: the day's Panchangam (including the date, your local time and the sunrise and sunset times for your chosen city), the profile's relation to you (for example "mother"), rasi, nakshatram, lagnam, the positions of the nine planets, the current dasha and bhukti with their dates, and Porutham results if a spouse is saved. We do not send your name, birth date, birth time or city name, but planet positions, dasha dates and sunrise times are derived from them and could indicate an approximate birth date or area.</li>
 <li>Your chosen language.</li>
 </ul>
 <p>This is processed by our server (Google Cloud Functions, Mumbai region) and by Google's Gemini API to produce the answer. Please do not type personal details, such as your name, phone number or address, into your question.</p>
+<p>Google processes your question and the chart facts to write the answer. Under Google's Gemini API terms for paid services, Google does not use them to train or improve its models; Google may keep them for a limited period to detect abuse. We do not store your question or the answer on our server.</p>
 <p><strong>Anonymous account.</strong> The app signs you in anonymously through Firebase Authentication. This creates a random ID. We do not ask for or store your email address or phone number.</p>
-<p><strong>Credits and purchases.</strong> We keep your free-question and credit balance and a record of credit changes. When you buy credits, payment is handled by Google Play; we never see your card or UPI details. We store the product bought and a fingerprint of the Google Play purchase token so the same purchase cannot be counted twice.</p>
-<p><strong>Usage records.</strong> For each AI question we keep the time, language, token counts, status and estimated cost, to enforce limits, prevent abuse and manage costs. If you tap Report on an AI answer, we receive that report.</p>
-<p><strong>Analytics and crash reports.</strong> We use Firebase Analytics (app events such as screens viewed and questions asked) and Firebase Crashlytics (crash traces and basic device information such as model and Android version).</p>
-<p><strong>Ads.</strong> The app shows ads from Google AdMob. AdMob may use your device's advertising ID and ad interaction data to show and measure ads. You can reset or delete your advertising ID, or opt out of ad personalisation, in your Android settings.</p>
+<p><strong>Credits and purchases.</strong> We keep your free-question and credit balance and a record of credit changes. When you buy credits, payment is handled by Google Play; we never see your card or UPI details. We store the product bought, the credits granted, the time, the Google Play order number and a fingerprint (hash) of the Google Play purchase token, so the same purchase cannot be counted twice and so we can handle refunds and support requests.</p>
+<p><strong>Usage records.</strong> For each AI question we keep the time, language, token counts, status and estimated cost, to enforce limits, prevent abuse and manage costs. If you tap Report on an AI answer, we receive the report: the text of that answer, the reason you chose and your anonymous ID. Your question is not included.</p>
+<p><strong>Analytics and crash reports.</strong> We use Google Analytics for Firebase to understand how the app is used: app events (such as screens viewed, questions asked, purchases and rewarded ads, with no question text, birth details or names), an app-instance identifier, your device's advertising ID, device model, Android version and language, and an approximate location (country or region) that Google derives from your IP address. We also use Firebase Crashlytics (crash traces and basic device information such as model and Android version).</p>
+<p><strong>Ads.</strong> Ads appear only when you choose to watch a short rewarded video for an extra question. Where the law requires it (for example in the EEA and UK), the app asks for your ad consent through Google's consent form, and you can change your choice later in Settings → Privacy options. The ads come from Google AdMob. AdMob may use your device's advertising ID and ad interaction data to show and measure ads. You can reset or delete your advertising ID, or opt out of ad personalisation, in your Android settings.</p>
 <p><strong>Notifications.</strong> The optional 6 AM notification is created on your phone and sends nothing to us.</p>
 
 <h2>3. Who receives data</h2>
-<p>We use Google services to run the app: Firebase (authentication, database, functions, analytics, crash reports), Gemini API (AI answers), Google Play (payments) and AdMob (ads). We do not sell your data.</p>
+<p>We use Google services to run the app: Firebase (authentication, database, server functions, App Check with Google Play Integrity to block fake requests, analytics, crash reports), the Gemini API (AI answers), Google Play (payments), and AdMob with Google's consent tool (ads). These services process data on our behalf or, for AdMob, under Google's own terms. We do not sell your data.</p>
 
 <h2>4. How long we keep it</h2>
-<p>Account data, credit records, usage records and reports are kept until you delete your account in the app. After deletion we keep only anonymous purchase records, without your ID, for accounting and to prevent a purchase being counted twice. Analytics and crash data are kept by Google under its Firebase retention settings.</p>
+<p>Account data, credit records, usage records and reports are kept until you delete your account in the app. After deletion we keep only the purchase records (product, credits, time, Google Play order number and a hash of the purchase token), with your app ID removed, for accounting, refunds and to prevent a purchase being counted twice. If you uninstall the app without deleting your account first, the data linked to its anonymous ID stays on our server, because we cannot tell which ID was yours. We do not yet delete inactive IDs automatically. Our server keeps technical logs (time, status, response time and error messages, without your question, answer or ID) for up to 30 days. Analytics and crash data are kept by Google under its Firebase retention settings.</p>
 
 <h2>5. Your choices</h2>
 <ul>
